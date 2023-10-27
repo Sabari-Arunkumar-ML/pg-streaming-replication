@@ -9,4 +9,4 @@ Streaming Replication Standby [Non archival mode, asyn replication]:
         docker pull postgres:latest
         docker build -t postgresql-streaming-standby:latest  . -f streaming_standby.dockerfile
     Docker Run command:
-        docker run -p 6432:5432 --name postgresql-standby -v /home/ubuntu/sabari/postgresql/standby/container-data:/var/lib/postgresql/data -d postgresql-streaming-standby -c 'config_file=/etc/postgresql/postgresql.conf'
+        docker run -p 6432:5432 --name postgresql-standby -v /home/ubuntu/sabari/postgresql/standby/container-data:/var/lib/postgresql/data -d postgresql-streaming-standby -c 'config_file=/etc/postgresql/postgresql.conf' -c 'hba_file=/etc/postgresql/pg_hba.conf'

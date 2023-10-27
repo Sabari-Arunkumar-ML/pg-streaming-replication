@@ -3,6 +3,7 @@ FROM postgres:latest
 LABEL maintainer="sabari"
 
 COPY ./postgresql.conf /etc/postgresql/
+COPY ./pg_hba.conf /etc/postgresql/
 EXPOSE 5432
 
 ENV PGDATA=/var/lib/postgresql/data/pgdata
