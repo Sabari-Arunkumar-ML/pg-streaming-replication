@@ -59,3 +59,15 @@ services:
         target: /usr/local/etc/haproxy/haproxy.cfg
       - source: primary-check
         target: /primary-check.sh
+  haproxy-6:
+    image: hap-with-psql:latest
+    ports:
+      - 3007:3000
+      - 11127:5432
+    privileged: true
+    configs:
+      - source: haproxy
+        target: /usr/local/etc/haproxy/haproxy.cfg
+      - source: primary-check
+        target: /primary-check.sh
+
